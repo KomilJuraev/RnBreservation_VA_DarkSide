@@ -1,5 +1,20 @@
 Feature: 
 
+	#login with the wrong email
+	@SPA-1280 @SPA-1241
+	Scenario: login_negative1
+			Given the user is on the login page 
+			When the user tries to login  "user2" 
+			Then the system should display error message "user with email: user2 doesn`t exist."	
+
+	#login with the wrong password
+	@SPA-1281 @SPA-1241
+	Scenario: login_negative2
+		Scenario: Invalid password 
+			Given the user is on the login page 
+			When the user tries to login user name "user1@gmail.com" and password "DavidBlane"
+			Then the system should display error message "invalid password."	
+
 	#login successfully with all usernames and passwords
 	@SPA-1282 @SPA-1546 @SPA-1241
 	Scenario: login_positive1
@@ -31,6 +46,20 @@ Feature:
 			|Morrie	Vondrach				|mvondrachf@goo.ne.jp					|morrievondrach		|
 			
 
+	#testing minimum and maximum reservation time
+	@SPA-1283 @SPA-1546 @SPA-1241
+	Scenario Outline: Min_Max_Room_Reservation
+		Scenario outline: time reservation
+		Given the <user> is on home page
+		When the <user> goes to hunt
+		Then the <user> should be able to reserve room from 30 minutes to 2 hours
+		
+		Examples:
+		
+		|user    |
+		|teacher |
+		|tech-lead|	
+
 	#reservation should be given in "from $ time to $time" format
 	@SPA-1284 @SPA-1546 @SPA-1241
 	Scenario Outline: Reservation_Format
@@ -56,6 +85,20 @@ Feature:
 		|user    |
 		|teacher |
 		|tech-lead|	
+
+	#{color:#000000}In the hunt for spot page ,date field should be calendar{color}
+	@SPA-1288 @SPA-1241
+	Scenario Outline: Hunt_SpotPage_Field_Check
+		Given the <user> is on the hunt page
+		When the <user> goes to date
+		Then the calendar should be displayed
+		
+		Examples:
+		
+		|user    |
+		|teacher |
+		|tech-lead|
+			
 
 	#Verify hunt for spot page is displayed when the teacher clicks on the hunt link at home page.
 	@SPA-1295 @SPA-1546 @SPA-1241
@@ -98,6 +141,63 @@ Feature:
 		|denali      |4       |
 		|meru        |4       |	
 
+	#Verify correct room name, date, time and confirm button is displayed on booking confirmation page. 
+	# 
+	@SPA-1493 @SPA-1241
+	Scenario: Verify_Info_On_Booking_Confirmation_Page
+		Scenario: Verify correct room name, date, time and confirm button is displayed on 
+		booking confirmation page 
+		Given the teacher is on the home page
+		When the teacher clicks on the hunt link
+		And teacher picks date two days after current date and from "2:30pm" to "4:00pm" 
+		And clicks on the search button
+		And clicks on book "kilimanjaro"
+		Then room name "kilimanjaro" , correct date, time and confirm button should be displayed
+		
+			
+
+	
+	@SPA-1519 @SPA-1241
+	Scenario: Verify_Days_InSchedul_Are_In_AscendingOrder 
+		
+		    Given the user is on the home page
+		    When user clicks the schedule button 
+		    Then the header of the page is schedule
+		    Then verify the days at the top of the calendar are listed in ascending order	
+
+	
+	@SPA-1521 @SPA-1241
+	Scenario: BeAbleToEnterAppointmentDetails			
+		Scenario: be able to enter right selections to make appointment
+		    Given the user is on home page
+		    When the user clicks on hunt button from top right corner
+		    Then header of the page hunt for spot is displayed 
+		    Then select last day of the current week
+		    And select 11:00 am for FROM selection box
+		    And select 12:00 pm for TO selection box 
+		    Then click search icon
+		    Then header of the page free spots is displayed 	
+
+	
+	@SPA-1522 @SPA-1241
+	Scenario Outline: Verify_Team_Leads_full_Name
+		Scenario Outline: correct team lead name is displayed 
+		    Given user is on the login page
+		    When user logs in using "<username>" and "<password>" 
+		    And select self from top right corner 
+		    Then header of the page me is displayed 
+		    Then correct team lead "<name>" is displayed
+		    
+		    Examples:		
+			|username	                |password	        |name               |       
+			|emaynell8f@google.es	    |besslebond	        |Bess  Lebond       |
+			|mcossor8l@webmd.com	    |cecilnacey	        |Cecil Nacey        |
+			|wfarrell8n@usnews.com	    |doniafisby	        |Donia Fisby        |
+			|bmurkus8q@psu.edu	        |alicasanbroke  	|Alica Sanbroke     |
+			|fvaughn8w@state.gov	    |jojorowesby	    |Jojo Rowesby       |
+			|ftabrett8z@latimes.com	    |beveriestouther	|Beverie Stouther   |
+			|lruffli93@dailymail.co.uk	|menardnewbatt	    |Menard Newbatt     |	
+
 	
 	@SPA-1523 @SPA-1241 @SPA-1546
 	Scenario: Confirm_appointment
@@ -113,23 +213,45 @@ Feature:
 			Then conference in denail has has been successfully scheduled message is displayed
 			
 
-	#testing minimum and maximum reservation time
-	@SPA-1283 @SPA-1546 @SPA-1241
-	Scenario Outline: Min_Max_Room_Reservation
-		Scenario outline: time reservation
-		Given the <user> is on home page
-		When the <user> goes to hunt
-		Then the <user> should be able to reserve room from 30 minutes to 2 hours
-		
-		Examples:
-		
-		|user    |
-		|teacher |
-		|tech-lead|	
+	#Weekly schedule display verification for students
+	@SPA-1604 @SPA-1241
+	Scenario: Student_Weekly_Schedule_Display
+		Scenario Outline: weekly schedule display
+		Given the student is on home page
+		When the student enters valid date
+		Then the schedule is displayed
+			
+
+	#Room Schedule Display Verification for students
+	@SPA-1607 @SPA-1241
+	Scenario: Student_Room_Schedule_Display
+		Scenario Outline: room schedule display
+		Given the student is on home page
+		When the student clicks on the room name
+		Then the schedule is displayed
+			
+
+	#"student-team-member" is displayed as a role for student
+	@SPA-1609 @SPA-1241
+	Scenario: Student_Role_Display
+		Scenario Outline: student role display
+		Given the student is on home page
+		When the student clicks on the my self name
+		Then the role < student-team-member> is displayed
+			
 
 	#Team Members display verification for Students
 	@SPA-1610 @SPA-1546 @SPA-1241
 	Scenario: Student_Team_Members_Display
+		Scenario Outline: team members display
+		Given the student is on home page
+		When the student clicks on the my team name
+		Then the team members are displayed
+			
+
+	#Team Members display verification for Students
+	@SPA-1614 @SPA-1241
+	Scenario Outline: Student_Team_Members_Display
 		Scenario Outline: team members display
 		Given the student is on home page
 		When the student clicks on the my team name
