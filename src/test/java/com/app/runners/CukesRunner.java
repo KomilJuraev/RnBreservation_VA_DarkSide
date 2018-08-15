@@ -1,19 +1,14 @@
-package com.app.runners;
+package com.prestashop.runners;
+
+import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import cucumber.api.junit.Cucumber;
 
-@CucumberOptions(
-		plugin = {"pretty", 
-				"html:target/cucumber-report",
-				"json:target/cucumber.json"
-		},
-		tags = "@temp",
-		features= {"src/test/resources/com/app/features/"},
-		glue="com/app/step_definitions/",
-		dryRun=true
-)
-public class CukesRunner extends AbstractTestNGCucumberTests {
-	
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = { "pretty", "html:target/cucumber-report",
+		"json:target/cucumber.json" }, tags = "@temp", features = {
+				"src/test/resources/com/app/features/" }, glue = "com/app/step_definitions/", dryRun = true)
+public class CukesRunner {
 
 }
