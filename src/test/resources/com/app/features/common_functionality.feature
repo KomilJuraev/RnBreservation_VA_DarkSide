@@ -17,7 +17,7 @@ Scenario Outline: Min_Max_Room_Reservation
 @SPA-1284 @SPA-1546 @SPA-1241 
 Scenario Outline: Reservation_Format 
 
-	Given the <user> is on the home page 
+	Given the <user> is on home page 
 	When the <user> goes to hunt 
 	Then reservation options should be given in a format:from $ time to $time 
 	
@@ -28,7 +28,7 @@ Scenario Outline: Reservation_Format
 		
 		#{color:#000000}Reservation window for the day should be from 7am to 10 pm{color}
 		@SPA-1287 @SPA-1546 @SPA-1241 
-Scenario Outline: Reservation_Window_Display 
+		Scenario Outline: Reservation_Window_Display 
 		
 			Given the <user> is on hunt page 
 			When the <user> enters valid date 
@@ -41,7 +41,7 @@ Scenario Outline: Reservation_Window_Display
 				
 				#{color:#000000}In the hunt for spot page ,date field should be calendar{color}
 				@SPA-1288 @SPA-1241 
-	Scenario Outline: Hunt_SpotPage_Field_Check 
+				Scenario Outline: Hunt_SpotPage_Field_Check 
 					Given the <user> is on the hunt page 
 					When the <user> goes to date 
 					Then the calendar should be displayed 
@@ -55,7 +55,7 @@ Scenario Outline: Reservation_Window_Display
 						
 						#Verify hunt for spot page is displayed when the teacher clicks on the hunt link at home page.
 						@SPA-1295 @SPA-1546 @SPA-1241 
-	Scenario: Hunt_For_Spot_Page_Display 
+						Scenario: Hunt_For_Spot_Page_Display 
 						
 							Given the teacher is on the home page 
 							When the teacher clicks on the hunt link 
