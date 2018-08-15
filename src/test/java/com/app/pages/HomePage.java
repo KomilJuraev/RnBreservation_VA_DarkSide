@@ -24,4 +24,16 @@ public class HomePage {
 	@FindBy(linkText = "my")
 	public WebElement my;
 
+	@FindBy(linkText = "kilimanjaro")
+	public WebElement kilimanjaro; 
+	
+	@FindBy(linkText = "half dome")
+	public WebElement half_dome; 
+	
+	@FindBy(linkText = "denali")
+	public WebElement denali; 
+	
+	@FindBy(linkText = "meru")
+	public WebElement meru;
+	
 }
