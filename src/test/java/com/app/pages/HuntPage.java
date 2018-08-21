@@ -12,6 +12,7 @@ public class HuntPage {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
+	
 	@FindBy(xpath = "//input[@name='date']")
 	public WebElement dataSelectionBox;
 
@@ -20,6 +21,9 @@ public class HuntPage {
 
 	@FindBy(xpath = "//select[@id='timelineFinish']")
 	public WebElement toSelectionBox;
+	
+	@FindBy(xpath="//fa[@name='search']")
+	public WebElement searchButton;
 
 	
 }
