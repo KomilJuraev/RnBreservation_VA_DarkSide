@@ -1,6 +1,7 @@
 package com.app.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,13 +17,20 @@ public class LoginPage {
 	@FindBy(name = "email")
 	public WebElement email;
 	
+	@FindBy(name = "email")
+	public WebElement email2;
+	
 	@FindBy(name = "password")
 	public WebElement password;
 	
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement signInButton;
 	
-	@FindBy(linkText = "hunt")
-	public WebElement huntLink;
+	@FindBy(xpath="//a[@href='/hunt']")
+	public WebElement hunt;
+	
+	
+	
+	
 
 }

@@ -11,7 +11,9 @@ public class HuntPage {
 	public HuntPage() {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
-
+	
+	@FindBy(xpath = "//a[@href='/hunt']")
+	public WebElement huntLink;
 	
 	@FindBy(xpath = "//input[@name='date']")
 	public WebElement dataSelectionBox;
