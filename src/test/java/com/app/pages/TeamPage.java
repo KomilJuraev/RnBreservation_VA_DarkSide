@@ -1,6 +1,6 @@
 package com.app.pages;
 
-<<<<<<< HEAD
+
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -8,11 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-=======
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
->>>>>>> 11f9c50358b8653bee6e669ceaf7e6e6a01f7cec
+
 import com.app.utilities.Driver;
 
 public class TeamPage {
