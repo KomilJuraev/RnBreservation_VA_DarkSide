@@ -1,4 +1,3 @@
-@temp
 Feature: testing common functionality for different users 
 
 Scenario Outline: Min_Max_Room_Reservation 

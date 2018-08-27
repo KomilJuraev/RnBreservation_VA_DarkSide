@@ -18,12 +18,15 @@ public class HomePage {
 	@FindBy(linkText = "schedule")
 	public WebElement schedule;
 
-	@FindBy(xpath = "//a[@routerlink='/hunt']")
+	@FindBy(xpath = "//a[@href='/hunt']")
 	public WebElement hunt;
 
 	@FindBy(linkText = "my")
 	public WebElement my;
 
+	@FindBy(linkText = "self")
+	public WebElement self;
+	
 	@FindBy(linkText = "kilimanjaro")
 	public WebElement kilimanjaro; 
 	

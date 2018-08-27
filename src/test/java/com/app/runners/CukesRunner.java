@@ -13,9 +13,10 @@ import cucumber.api.junit.Cucumber;
 		}, 
 	tags = "@temp",
 	features = {
-				"src/test/resources/com/app/features/" 
+			"src/test/resources/com/app/features/" 
 			}, 
-	glue = "com/app/step_definitions/", dryRun = false
+	glue = "com/app/step_definitions/"
+	, dryRun = false
 	)
 public class CukesRunner {
 
