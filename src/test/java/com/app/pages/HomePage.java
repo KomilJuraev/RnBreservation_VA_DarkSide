@@ -39,6 +39,9 @@ public class HomePage {
 	@FindBy(linkText = "meru")
 	public WebElement meru;
 	
+	@FindBy(xpath = "//a[@class ='navbar-item button is-danger']")
+	public WebElement signout;
 	
-	
+	@FindBy(xpath = "//h2[@class = 'subtitle']")
+	public WebElement darkside;
 }
