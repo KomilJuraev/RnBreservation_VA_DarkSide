@@ -16,7 +16,7 @@ Scenario: Student_Room_Schedule_Display
 	
 	
 	#"student-team-member" is displayed as a role for student
-	@temp
+	
 @SPA-1609 @SPA-1241 
 Scenario: Student_Role_Display
 	Given the student is on the home page 

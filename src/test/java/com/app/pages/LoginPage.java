@@ -29,6 +29,9 @@ public class LoginPage {
 	@FindBy(xpath="//a[@href='/hunt']")
 	public WebElement hunt;
 	
+	@FindBy(xpath = "//div[@class = 'cdk-live-announcer-element cdk-visually-hidden']")
+	public WebElement errorMessage;
+	
 	
 	
 	

@@ -15,7 +15,7 @@ Scenario: Be_Able_To_Enter_Appointment_Details
 	Then click search icon 
 	Then header of the page free spots is displayed 
 	
-@temp
+
 Scenario Outline: Verify_Team_Leads_full_Name 
 	Given the user is on the home page
 	When user logs in using "<username>" and "<password>" 
