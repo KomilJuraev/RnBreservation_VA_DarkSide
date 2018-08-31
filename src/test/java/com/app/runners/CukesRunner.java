@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		"html:target/cucumber-report",
 		"json:target/cucumber.json"
 		}, 
-	tags = "@temp",
+	tags = "@temp2",
 	features = {
 			"src/test/resources/com/app/features/" 
 			}, 
