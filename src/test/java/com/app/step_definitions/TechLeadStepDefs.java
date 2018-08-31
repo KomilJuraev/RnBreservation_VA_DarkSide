@@ -3,6 +3,7 @@ package com.app.step_definitions;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -16,7 +17,6 @@ import com.app.utilities.BrowserUtils;
 import com.app.utilities.ConfigurationReader;
 import com.app.utilities.Driver;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -30,6 +30,7 @@ public class TechLeadStepDefs {
 	Actions action;
 	WebDriver driver;
 	SelfPage selfPage;
+	Alert alert;
 
 	@Given("the user is on the home page")
 	public void the_user_is_on_the_home_page() {
@@ -165,14 +166,16 @@ public class TechLeadStepDefs {
 
 	@Then("click on cofirm")
 	public void click_on_cofirm() {
+		BrowserUtils.waitFor(2);
 		huntPage = new HuntPage();
 		huntPage.confirmButton.click();
 	}
 
 	@Then("conference in denail has has been successfully scheduled message is displayed")
 	public void conference_in_denail_has_has_been_successfully_scheduled_message_is_displayed() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		alert=driver.switchTo().alert(); 
+		System.out.println(alert.getText());
+		BrowserUtils.waitFor(2);
 	}
 
 }

@@ -37,7 +37,7 @@ Scenario Outline: Verify_Team_Leads_full_Name
 @temp 
 Scenario: Confirm_appointment 
 	Given the user is on the home page 
-	And the user enters login "emaynell8f@google.es" "besslebond" 
+	And the user enters login "mcossor8l@webmd.com" "cecilnacey" 
 	When the user clicks on hunt button from top right corner 
 	Then header of the page hunt for spot is displayed 
 	Then select last day of the current week 
