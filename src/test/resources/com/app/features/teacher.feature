@@ -1,3 +1,4 @@
+@temp2
 Feature: testing common functionality for teachers
 
 #Verify hunt for spot page is displayed when the teacher clicks on the hunt link at home page.
@@ -20,7 +21,7 @@ Feature: testing common functionality for teachers
 		|username                        |password      |fullName      |
 		|teachervawiltonamiss@gmail.com  |wiltonamiss   |Wilton Amiss  |
 		|teachervasctoforstall@gmail.com |scottforstall |Scott Forstall|
-		|teachervamikemarcus@gmail.com   |mikemarcus    |Mark Marcus   |
+		|teachervamikemarcus@gmail.com   |mikemarcus    |Mike Marcus   |
 		
 			
 
@@ -45,8 +46,5 @@ Feature: testing common functionality for teachers
 		Given the teacher is on the home page
 		When the teacher clicks on the hunt link
 		And teacher picks date two days after current date and from "2:30pm" to "4:00pm" 
-		And clicks on the search button
-		And clicks on book "kilimanjaro"
-		Then room name "kilimanjaro" , correct date, time and confirm button should be displayed
-		
+		Then Search button is clickable
 			

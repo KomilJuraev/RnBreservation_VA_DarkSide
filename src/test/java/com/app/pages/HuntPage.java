@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.app.utilities.Driver;
 
-public class HuntPage {
+public class HuntPage extends SelfPage{
 
 	public HuntPage() {
 		PageFactory.initElements(Driver.getDriver(), this);
