@@ -26,12 +26,12 @@ Scenario Outline: Verify_Team_Leads_full_Name
 	Examples: 
 		|username	                |password	        |name               |       
 		|emaynell8f@google.es	    |besslebond	        |Bess  Lebond       |
-	#	|mcossor8l@webmd.com	    |cecilnacey	        |Cecil Nacey        |
-	#	|wfarrell8n@usnews.com	    |doniafisby	        |Donia Fisby        |
-	#	|bmurkus8q@psu.edu	        |alicasanbroke  	|Alica Sanbroke     |
-	#	|fvaughn8w@state.gov	    |jojorowesby	    |Jojo Rowesby       |
-	#	|ftabrett8z@latimes.com	    |beveriestouther	|Beverie Stouther   |
-	#	|lruffli93@dailymail.co.uk	|menardnewbatt	    |Menard Newbatt     |	
+		|mcossor8l@webmd.com	    |cecilnacey	        |Cecil Nacey        |
+		|wfarrell8n@usnews.com	    |doniafisby	        |Donia Fisby        |
+		|bmurkus8q@psu.edu	        |alicasanbroke  	|Alica Sanbroke     |
+		|fvaughn8w@state.gov	    |jojorowesby	    |Jojo Rowesby       |
+		|ftabrett8z@latimes.com	    |beveriestouther	|Beverie Stouther   |
+		|lruffli93@dailymail.co.uk	|menardnewbatt	    |Menard Newbatt     |	
 		
 		
 Scenario: Confirm_appointment 
