@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
 			"src/test/resources/com/app/features/tech_lead.feature" 
 			}, 
 	glue = "com/app/step_definitions/"
-	, dryRun = false
+	, dryRun = true
 	)
 public class KomilSRunner {
 	

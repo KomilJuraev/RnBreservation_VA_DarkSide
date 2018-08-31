@@ -47,7 +47,7 @@ Scenario: Confirm_appointment
 	Then header of the page free spots is displayed 
 	Then click book for denali 
 	Then click on cofirm 
-	Then conference in denail has has been successfully scheduled message is displayed 
+	Then user is on schedule page 
 	
 	
 	

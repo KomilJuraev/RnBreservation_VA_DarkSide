@@ -160,7 +160,7 @@ public class TechLeadStepDefs {
 
 	@Then("click book for denali")
 	public void click_book_for_denali() {
-		huntPage = new HuntPage(); 
+		huntPage = new HuntPage();
 		huntPage.daneliBook.click();
 	}
 
@@ -173,9 +173,8 @@ public class TechLeadStepDefs {
 
 	@Then("conference in denail has has been successfully scheduled message is displayed")
 	public void conference_in_denail_has_has_been_successfully_scheduled_message_is_displayed() {
-		alert=driver.switchTo().alert(); 
-		System.out.println(alert.getText());
-		BrowserUtils.waitFor(2);
+		schedulePage = new SchedulePage();
+		assertTrue(schedulePage.title.isDisplayed());
 	}
 
 }
