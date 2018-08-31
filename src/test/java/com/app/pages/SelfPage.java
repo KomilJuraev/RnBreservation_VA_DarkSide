@@ -19,6 +19,9 @@ public class SelfPage {
 	}
 
 
+	@FindBy(xpath="//div[@class='card-content is-transparent']/div[1]/div[2]/p[1]")
+	public WebElement fullName;
+	
 	@FindBy(xpath = "(//*[@class='title is-6'][1]")
 	public WebElement name;
 
@@ -116,6 +119,8 @@ public class SelfPage {
 	@FindBy(xpath = "(//p[@_ngcontent-c6])[11]")
 	public WebElement teamLeadSelfSide;
 
+	@FindBy(xpath = "//h1")
+	public WebElement me; 
 	//--------------------------
 
 	

@@ -33,4 +33,10 @@ public class HuntPage {
 	@FindBy(xpath = "//h1")
 	public WebElement freeSpotsHeader; 
 
+	@FindBy(xpath = "//div[@class='columns is-multiline is-centered']/div[3]/div/footer/div[1]/form/button")
+	public WebElement daneliBook;
+	
+	@FindBy(xpath = "//button[@class='button is-dark']")
+	public WebElement confirmButton;
+
 }

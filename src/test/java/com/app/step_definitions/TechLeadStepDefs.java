@@ -1,6 +1,7 @@
 package com.app.step_definitions;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -34,13 +35,15 @@ public class TechLeadStepDefs {
 	public void the_user_is_on_the_home_page() {
 		Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 		BrowserUtils.waitFor(2);
-		String login = "emaynell8f@google.es";
-		String password = "besslebond";
+	}
+
+	@Given("user enters login {string} {string}")
+	public void user_enters_login(String userName, String password) {
 		loginPage = new LoginPage();
-		loginPage.email.sendKeys(login);
+		loginPage.email.sendKeys(userName);
 		loginPage.password.sendKeys(password);
 		loginPage.signInButton.click();
-		BrowserUtils.waitFor(2);
+		BrowserUtils.waitFor(3);
 
 	}
 
@@ -48,16 +51,25 @@ public class TechLeadStepDefs {
 	public void user_clicks_the_schedule_button() {
 		homePage = new HomePage();
 		homePage.schedule.click();
-		BrowserUtils.waitFor(2);
+		BrowserUtils.waitFor(3);
 
 	}
 
 	@Then("the header of the page is schedule")
 	public void the_header_of_the_page_is_schedule() {
 		schedulePage = new SchedulePage();
-		String actualTitle = schedulePage.title.getText();
-		assertEquals(actualTitle, "schedule");
+		assertTrue(schedulePage.title.isDisplayed());
 		BrowserUtils.waitFor(2);
+	}
+
+	@Given("the user enters login {string} {string}")
+	public void the_user_enters_login(String username, String password) {
+		loginPage = new LoginPage();
+		loginPage.email.sendKeys(username);
+		loginPage.password.sendKeys(password);
+		loginPage.signInButton.click();
+		BrowserUtils.waitFor(3);
+
 	}
 
 	@When("the user clicks on hunt button from top right corner")
@@ -103,6 +115,7 @@ public class TechLeadStepDefs {
 	public void click_search_icon() {
 		huntPage = new HuntPage();
 		huntPage.searchButton.click();
+		BrowserUtils.waitFor(2);
 	}
 
 	@Then("header of the page free spots is displayed")
@@ -110,6 +123,7 @@ public class TechLeadStepDefs {
 		huntPage = new HuntPage();
 		String header = huntPage.freeSpotsHeader.getText();
 		assertEquals(header, "free spots");
+		BrowserUtils.waitFor(2);
 	}
 
 	@When("user logs in using {string} and {string}")
@@ -125,57 +139,34 @@ public class TechLeadStepDefs {
 	public void select_self_from_top_right_corner() {
 		selfPage = new SelfPage();
 		selfPage.goToSelf();
-		 BrowserUtils.waitFor(2);
-	
+		BrowserUtils.waitFor(2);
 
 	}
 
 	@Then("header of the page me is displayed")
 	public void header_of_the_page_me_is_displayed() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		selfPage = new SelfPage();
+		assertTrue(selfPage.me.isDisplayed());
+		BrowserUtils.waitFor(2);
 	}
 
 	@Then("correct team lead {string} is displayed")
-	public void correct_team_lead_is_displayed(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Given("user is on the hunt page")
-	public void user_is_on_the_hunt_page() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Then("select {int}:{int} am for from selection box")
-	public void select_am_for_from_selection_box(Integer int1, Integer int2) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Then("select {int}:{int} for to selection box")
-	public void select_for_to_selection_box(Integer int1, Integer int2) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Then("header free spots is displayed")
-	public void header_free_spots_is_displayed() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void correct_team_lead_is_displayed(String fullName) {
+		selfPage = new SelfPage();
+		String name = selfPage.fullName.getText();
+		assertEquals(name, fullName);
 	}
 
 	@Then("click book for denali")
 	public void click_book_for_denali() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		huntPage = new HuntPage(); 
+		huntPage.daneliBook.click();
 	}
 
 	@Then("click on cofirm")
 	public void click_on_cofirm() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		huntPage = new HuntPage();
+		huntPage.confirmButton.click();
 	}
 
 	@Then("conference in denail has has been successfully scheduled message is displayed")
